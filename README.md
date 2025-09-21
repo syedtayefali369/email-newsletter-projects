@@ -37,10 +37,11 @@ These showcase **email-safe coding practices** (table-based layouts, inline CSS,
 - Pure **HTML + Inline CSS** (email safe)
 - Responsive layouts (tables + media queries)
 - Tested for Gmail, Outlook, Apple Mail
+  
+Open .html files in browser or import into Mailchimp / Klaviyo / HubSpot as custom templates.
 
----
+Replace placeholder images & links with client content.
 
-## 🚀 How to Use
-1. Clone repo  
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/email-newsletter-projects.git
+📸 Screenshots
+E-Commerce Newsletter
+SaaS Newsletter
