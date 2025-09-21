@@ -1,56 +1,309 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>UrbanFit Newsletter</title>
-  <style>
-    body { margin:0; padding:0; background:#f4f4f4; }
-    table { border-spacing:0; }
-    img { display:block; max-width:100%; height:auto; }
-    a { text-decoration:none; }
-    @media screen and (max-width:600px) {
-      .two-col { width:100% !important; display:block !important; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELÉGANCE | Premium Fashion Newsletter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .brand-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .brand-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            letter-spacing: 3px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .tagline {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-top: 8px;
+        }
+        
+        .hero-banner {
+            width: 100%;
+            height: 320px;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .heading {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            text-align: center;
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            letter-spacing: 1px;
+        }
+        
+        .subheading {
+            font-size: 16px;
+            text-align: center;
+            color: #7f8c8d;
+            margin: 0 0 40px 0;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        .product-grid {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 40px 0;
+            gap: 25px;
+        }
+        
+        .product {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .product-details {
+            padding: 20px;
+            background: white;
+        }
+        
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+        }
+        
+        .product-price {
+            font-size: 18px;
+            color: #e74c3c;
+            margin: 0 0 12px 0;
+            font-weight: 600;
+        }
+        
+        .product-description {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #d39e00 0%, #f5b400 100%);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 18px 45px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            box-shadow: 0 5px 15px rgba(243, 189, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(243, 189, 0, 0.5);
+        }
+        
+        .offer-text {
+            text-align: center;
+            font-size: 14px;
+            color: #7f8c8d;
+            margin: 20px 0 0 0;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+            padding: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        .social-links {
+            margin: 0 0 30px 0;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 18px;
+            margin: 0 8px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+        
+        .copyright {
+            margin: 25px 0 0 0;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        @media only screen and (max-width: 650px) {
+            .product-grid {
+                flex-direction: column;
+            }
+            
+            .heading {
+                font-size: 26px;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .brand-name {
+                font-size: 26px;
+            }
+        }
+    </style>
 </head>
-<body style="margin:0; padding:0; background:#f4f4f4;">
-  <table width="100%" bgcolor="#f4f4f4">
-    <tr>
-      <td align="center">
-        <table width="600" bgcolor="#ffffff" style="max-width:600px;">
-          <tr><td align="center" style="padding:20px;">
-            <img src="https://via.placeholder.com/150x50?text=UrbanFit" alt="UrbanFit Logo">
-          </td></tr>
-          <tr><td><img src="https://via.placeholder.com/600x250?text=New+Fall+Collection" alt="New Collection"></td></tr>
-          <tr><td style="padding:20px; font-family:Arial; font-size:16px; color:#333;">
-            <h2 style="margin:0;">🔥 New Season, New Style</h2>
-            <p style="margin:10px 0;">Get 20% off our fresh arrivals this week only.</p>
-          </td></tr>
-          <tr><td align="center">
-            <table width="100%">
-              <tr>
-                <td class="two-col" width="50%" align="center" style="padding:10px;">
-                  <img src="https://via.placeholder.com/250?text=Jacket" alt="Jacket">
-                  <p style="font-family:Arial; color:#333;">Classic Jacket – $59</p>
-                  <a href="#" style="background:#000; color:#fff; padding:10px 20px; display:inline-block;">Shop Now</a>
-                </td>
-                <td class="two-col" width="50%" align="center" style="padding:10px;">
-                  <img src="https://via.placeholder.com/250?text=Sneakers" alt="Sneakers">
-                  <p style="font-family:Arial; color:#333;">Urban Sneakers – $79</p>
-                  <a href="#" style="background:#000; color:#fff; padding:10px 20px; display:inline-block;">Shop Now</a>
-                </td>
-              </tr>
-            </table>
-          </td></tr>
-          <tr><td align="center" style="padding:30px;">
-            <a href="#" style="background:#ff5733; color:#fff; padding:15px 30px; font-size:18px; display:inline-block;">Shop Full Collection</a>
-          </td></tr>
-          <tr><td align="center" bgcolor="#222" style="padding:20px; font-family:Arial; color:#aaa; font-size:12px;">
-            <p>UrbanFit Inc. | 123 Fashion Street | <a href="#" style="color:#aaa;">Unsubscribe</a></p>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+<body>
+    <div class="container">
+        <!-- Header with brand name -->
+        <div class="brand-header">
+            <a href="#" class="brand-name">ELÉGANCE</a>
+            <div class="tagline">LUXURY FASHION & ACCESSORIES</div>
+        </div>
+        
+        <!-- Hero banner -->
+        <img src="https://images.unsplash.com/photo-1592301933927-35b597393c0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Summer Collection - Shop Now" class="hero-banner">
+        
+        <!-- Main content -->
+        <div class="content">
+            <h1 class="heading">Summer Collection 2023</h1>
+            <p class="subheading">Discover our new luxury collection curated for the modern sophisticate. Experience premium fabrics, exquisite craftsmanship, and timeless designs.</p>
+            
+            <!-- Product grid -->
+            <div class="product-grid">
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Luxury Summer Dress" class="product-image">
+                    <div class="product-details">
+                        <h3 class="product-title">Silk Evening Dress</h3>
+                        <p class="product-price">$249.99</p>
+                        <p class="product-description">Handcrafted from premium silk with delicate embroidery. Perfect for summer soirées.</p>
+                    </div>
+                </div>
+                
+                <div class="product">
+                    <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Designer Handbag" class="product-image">
+                    <div class="product-details">
+                        <h3 class="product-title">Designer Leather Bag</h3>
+                        <p class="product-price">$189.99</p>
+                        <p class="product-description">Crafted from genuine leather with gold-accented hardware. A timeless accessory.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="cta-container">
+                <a href="#" class="cta-button">Shop The Collection</a>
+                <p class="offer-text">Free shipping on all orders over $150. Use code SUMMER23 for 15% off.</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#" class="footer-link">Contact Us</a>
+                <a href="#" class="footer-link">Shipping & Returns</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms & Conditions</a>
+                <a href="#" class="footer-link">Unsubscribe</a>
+            </div>
+            
+            <p class="copyright">ELÉGANCE © 2023. All Rights Reserved.<br>123 Fashion Avenue, New York, NY 10001</p>
+        </div>
+    </div>
 </body>
 </html>
