@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Insightful Reader | Newsletter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .newsletter-container {
+            max-width: 650px;
+            margin: 30px auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        /* Header Styles */
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .blog-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .blog-tagline {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            margin-top: 8px;
+        }
+        
+        /* Content Styles */
+        .content {
+            padding: 40px;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            margin: 0 0 30px 0;
+            color: #2c3e50;
+            text-align: center;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            border-radius: 3px;
+        }
+        
+        /* Article Cards */
+        .article-card {
+            margin: 0 0 35px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .article-content {
+            padding: 25px;
+            background: white;
+        }
+        
+        .article-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            line-height: 1.3;
+        }
+        
+        .article-excerpt {
+            font-size: 16px;
+            color: #5a6773;
+            margin: 0 0 20px 0;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: #4b6cb7;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: #2c3e50;
+        }
+        
+        /* Author Bio */
+        .author-bio {
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            background: #f9fafc;
+            border-radius: 10px;
+            margin: 40px 0 0 0;
+        }
+        
+        .author-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 20px;
+            border: 3px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .author-info {
+            flex: 1;
+        }
+        
+        .author-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #2c3e50;
+        }
+        
+        .author-description {
+            font-size: 15px;
+            color: #5a6773;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+            padding: 30px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+        
+        .copyright {
+            margin: 25px 0 0 0;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        @media only screen and (max-width: 650px) {
+            .content {
+                padding: 25px;
+            }
+            
+            .author-bio {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .author-avatar {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Blog/Content Newsletter -->
+    <div class="newsletter-container">
+        <!-- Header -->
+        <div class="header">
+            <a href="#" class="blog-logo">The Insightful Reader</a>
+            <div class="blog-tagline">Curated content for curious minds</div>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <h2 class="section-title">This Week's Articles</h2>
+            
+            <!-- Article 1 -->
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="The Future of AI in Content Creation" class="article-image">
+                <div class="article-content">
+                    <h3 class="article-title">The Future of AI in Content Creation</h3>
+                    <p class="article-excerpt">Discover how artificial intelligence is revolutionizing the way we create and consume content, and what it means for the future of creative industries.</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </div>
+            </div>
+            
+            <!-- Article 2 -->
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Productivity Tips for Remote Workers" class="article-image">
+                <div class="article-content">
+                    <h3 class="article-title">Productivity Tips for Remote Workers</h3>
+                    <p class="article-excerpt">Maximize your efficiency while working from home with these evidence-based strategies that help maintain focus and work-life balance.</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </div>
+            </div>
+            
+            <!-- Article 3 -->
+            <div class="article-card">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" alt="Building a Sustainable Business Model" class="article-image">
+                <div class="article-content">
+                    <h3 class="article-title">Building a Sustainable Business Model</h3>
+                    <p class="article-excerpt">Learn how successful companies are integrating sustainability into their core business strategies while maintaining profitability.</p>
+                    <a href="#" class="read-more">Read more →</a>
+                </div>
+            </div>
+            
+            <!-- Author Bio -->
+            <div class="author-bio">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Author" class="author-avatar">
+                <div class="author-info">
+                    <h4 class="author-name">David Chen</h4>
+                    <p class="author-description">David is a content strategist and writer with over 10 years of experience in digital media. He's passionate about technology, productivity, and sustainable business practices.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="#" class="footer-link">View Online</a>
+                <a href="#" class="footer-link">Unsubscribe</a>
+                <a href="#" class="footer-link">Preferences</a>
+                <a href="#" class="footer-link">Contact</a>
+            </div>
+            
+            <p class="copyright">The Insightful Reader © 2023. All Rights Reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

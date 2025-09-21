@@ -1,56 +1,333 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>TaskFlow Newsletter</title>
-  <style>
-    body { margin:0; padding:0; background:#f9f9f9; }
-    table { border-spacing:0; }
-    img { display:block; max-width:100%; height:auto; }
-    a { text-decoration:none; }
-    @media screen and (max-width:600px) {
-      .container { width:100% !important; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus SaaS | Product Update</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            margin-top: 8px;
+        }
+        
+        .date-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .heading {
+            font-size: 28px;
+            text-align: center;
+            margin: 0 0 15px 0;
+            color: #2c3e50;
+            font-weight: 700;
+        }
+        
+        .subheading {
+            font-size: 16px;
+            text-align: center;
+            color: #7f8c8d;
+            margin: 0 0 40px 0;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            margin: 0 0 35px 0;
+            padding: 25px;
+            border-radius: 10px;
+            background: #f9fafc;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .feature-content {
+            flex: 1;
+        }
+        
+        .feature-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0 0 12px 0;
+            color: #2c3e50;
+        }
+        
+        .feature-description {
+            font-size: 15px;
+            color: #5a6773;
+            margin: 0;
+            line-height: 1.6;
+        }
+        
+        .image-placeholder {
+            width: 100%;
+            height: 220px;
+            border-radius: 8px;
+            margin: 25px 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .cta-container {
+            text-align: center;
+            margin: 50px 0 30px 0;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(75, 108, 183, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(75, 108, 183, 0.5);
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #2c3e50 0%, #1a2530 100%);
+            padding: 40px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+        }
+        
+        .social-links {
+            margin: 0 0 30px 0;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 18px;
+            margin: 0 8px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-link {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 13px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-link:hover {
+            color: white;
+        }
+        
+        .copyright {
+            margin: 25px 0 0 0;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        @media only screen and (max-width: 650px) {
+            .feature {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .feature-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .heading {
+                font-size: 24px;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            .logo {
+                font-size: 26px;
+            }
+        }
+    </style>
 </head>
-<body style="margin:0; padding:0; background:#f9f9f9;">
-  <table width="100%" bgcolor="#f9f9f9">
-    <tr>
-      <td align="center">
-        <table width="600" bgcolor="#ffffff" class="container" style="max-width:600px;">
-          <tr><td align="center" style="padding:20px;">
-            <img src="https://via.placeholder.com/150x50?text=TaskFlow" alt="TaskFlow Logo">
-          </td></tr>
-          <tr><td><img src="https://via.placeholder.com/600x200?text=New+Features+This+Month" alt="New Features"></td></tr>
-          <tr><td style="padding:20px; font-family:Arial; font-size:16px; color:#333;">
-            <h2 style="margin:0;">🚀 TaskFlow Just Got Better</h2>
-            <p style="margin:10px 0;">We’ve added powerful new tools to help you stay productive.</p>
-          </td></tr>
-          <tr><td style="padding:20px;">
-            <table width="100%">
-              <tr>
-                <td width="50%" style="padding:10px; font-family:Arial; color:#333;" valign="top">
-                  <img src="https://via.placeholder.com/100?text=📅" alt="Calendar">
-                  <h3 style="margin:10px 0 5px;">Smart Calendar</h3>
-                  <p>Organize tasks with AI-powered scheduling.</p>
-                </td>
-                <td width="50%" style="padding:10px; font-family:Arial; color:#333;" valign="top">
-                  <img src="https://via.placeholder.com/100?text=🔔" alt="Notifications">
-                  <h3 style="margin:10px 0 5px;">Smart Reminders</h3>
-                  <p>Get notified before deadlines so you never miss a task.</p>
-                </td>
-              </tr>
-            </table>
-          </td></tr>
-          <tr><td align="center" style="padding:30px;">
-            <a href="#" style="background:#007bff; color:#fff; padding:15px 30px; font-size:18px; display:inline-block;">Try New Features</a>
-          </td></tr>
-          <tr><td align="center" bgcolor="#222" style="padding:20px; font-family:Arial; color:#aaa; font-size:12px;">
-            <p>TaskFlow Inc. | Manage your tasks smarter | <a href="#" style="color:#aaa;">Unsubscribe</a></p>
-          </td></tr>
-        </table>
-      </td>
-    </tr>
-  </table>
+<body>
+    <div class="container">
+        <!-- Header with logo -->
+        <div class="header">
+            <a href="#" class="logo">NEXUS</a>
+            <div class="tagline">The all-in-one project management platform</div>
+            <div class="date-badge">July 2023 Update</div>
+        </div>
+        
+        <!-- Main content -->
+        <div class="content">
+            <h1 class="heading">What's New in Nexus?</h1>
+            <p class="subheading">We're excited to share our latest updates designed to make your workflow more efficient and productive.</p>
+            
+            <!-- Feature 1 -->
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <div class="feature-content">
+                    <h3 class="feature-title">Advanced Analytics Dashboard</h3>
+                    <p class="feature-description">Our new dashboard provides real-time insights into your team's performance with customizable reports and data visualizations. Track project progress, identify bottlenecks, and optimize your workflow.</p>
+                </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="feature-content">
+                    <h3 class="feature-title">AI-Powered Task Recommendations</h3>
+                    <p class="feature-description">Leverage machine learning to get smart task suggestions based on your team's historical data and work patterns. Save time on planning and focus on execution.</p>
+                </div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="feature">
+                <div class="feature-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="feature-content">
+                    <h3 class="feature-title">Integrated Team Chat</h3>
+                    <p class="feature-description">Communicate with your team without leaving the platform. Our new chat feature supports threads, file sharing, and integrates directly with your tasks and projects.</p>
+                </div>
+            </div>
+            
+            <!-- Image placeholder -->
+            <div class="image-placeholder">
+                <i class="fas fa-chart-bar" style="font-size: 48px; margin-right: 15px;"></i>
+                Analytics Dashboard Preview
+            </div>
+            
+            <!-- CTA Button -->
+            <div class="cta-container">
+                <a href="#" class="cta-button">Explore New Features</a>
+                <p style="margin-top: 20px; color: #7f8c8d; font-size: 14px;">All existing customers have immediate access to these updates.</p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div class="social-links">
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#" class="footer-link">Contact Support</a>
+                <a href="#" class="footer-link">Knowledge Base</a>
+                <a href="#" class="footer-link">Product Roadmap</a>
+                <a href="#" class="footer-link">Unsubscribe</a>
+                <a href="#" class="footer-link">Preferences</a>
+            </div>
+            
+            <p class="copyright">Nexus SaaS © 2023. All Rights Reserved.<br>123 Innovation Drive, San Francisco, CA 94107</p>
+        </div>
+    </div>
 </body>
 </html>
