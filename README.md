@@ -32,7 +32,7 @@ Showcasing **email-safe coding practices** (table-based layouts, inline CSS, mob
   - Article cards (3 featured articles)
   - Author bio section
   - Footer with links  
-- 📂 [View Code](./blog.html)
+- 📂 [View Code](./blog-newsletter.html)
 
 ### 4. Event Invitation Newsletter
 - Client type: Conference / Webinar / Event Host  
@@ -42,7 +42,7 @@ Showcasing **email-safe coding practices** (table-based layouts, inline CSS, mob
   - Countdown timer (JavaScript)
   - CTA button
   - Footer with event links  
-- 📂 [View Code](./invitation.html)
+- 📂 [View Code](./event-newsletter.html)
 
 ### 5. Portfolio Landing Page
 - Purpose: Showcase newsletter templates and design services  
